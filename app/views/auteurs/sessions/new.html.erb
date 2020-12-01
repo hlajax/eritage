@@ -1,0 +1,40 @@
+<div class="container-fluid big-container">
+    <div class="row">
+        <div class="col-lg-3 offset-lg-1 bg-white cnx-form-container">
+          <h2>Connectez-vous</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-group">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autocomplete: "email", class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :mot_de_passe %><br />
+    <%= f.password_field :password, autocomplete: "current-password", class:"form-control" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="form-group">
+      <%= f.check_box :remember_me %>
+      <%= f.label :rester_connecté %>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.submit "Connexion", class:"btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= render "auteurs/shared/links" %>
+        </div>
+        <div class="col-lg-7 offset-lg-1">
+          <div class="row">
+            <div class="col-lg-10 offset-1 text-center" style="margin-top:10%;">
+              <h4>Si vous pensez que les histoires ne sont pas importantes, attendez jusqu'à ce qu'elles soient tout ce que vous laisserez derrière vous</h4>
+              <img src="https://res.cloudinary.com/aseed/image/upload/v1606832963/5fc652f404bfd_nkq8ep.jpg" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div>    
+    </div>
+</div>
